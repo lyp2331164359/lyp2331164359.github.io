@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李怡朋的个人网页</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('https://images.unsplash.com/photo-1542282810-979aca4d7d7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDIwfHxiYWNrZ3JvdW5kfGVufDB8fHx8MTYyNjA5NTY1Nw&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .header {
+            height: 100vh;
+            position: relative;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: url('https://lyp2331164359.github.io/file-GYR9bUuDSto73SBu9GTvnEG4.png') no-repeat center center;
+            background-size: cover;
+        }
+        .header h1 {
+            font-size: 4em;
+            z-index: 1;
+            margin: 0;
+            animation: fadeIn 2s;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .header p {
+            font-size: 1.5em;
+            z-index: 1;
+            animation: fadeIn 3s;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin-top: 100px;
+            animation: slideIn 2s;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .profile img {
+            border-radius: 50%;
+            border: 5px solid white;
+            width: 200px;
+            height: 200px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 60px;
+        }
+        .section h2 {
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2em;
+            position: relative;
+        }
+        .section h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            display: block;
+            margin: 10px auto;
+            border-radius: 3px;
+        }
+        .info-grid, .skills-grid, .experience-grid, .education-grid, .honors-grid, .practice-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+        .info-grid div, .skills-grid div, .experience-grid div, .education-grid div, .honors-grid div, .practice-grid div {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .info-grid div:hover, .skills-grid div:hover, .experience-grid div:hover, .education-grid div:hover, .honors-grid div:hover, .practice-grid div:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="header">
+        <h1>李怡朋</h1>
+        <p>材料科学与工程专业本科生</p>
+    </div>
+    <div class="navbar">
+        <a href="#info">基本信息</a>
+        <a href="#education">教育背景</a>
+        <a href="#research">研究经历</a>
+        <a href="#honors">荣誉奖项</a>
+        <a href="#practice">实践经历</a>
+        <a href="#skills">技能</a>
+    </div>
+    <div class="container">
+        <div class="profile">
+            <img src="https://lyp2331164359.github.io/file-b54rDiGezv5aGTlblZy0PaBL.jpg" alt="李怡朋的照片">
+        </div>
+        <div id="info" class="section info">
+            <h2>基本信息</h2>
+            <div class="info-grid">
+                <div>
+                    <p>年龄：21岁</p>
+                    <p>民族：汉族</p>
+                </div>
+                <div>
+                    <p>电子邮件：14214431@cumt.edu.cn</p>
+                    <p>联系电话：18238501536</p>
+                </div>
+            </div>
+        </div>
+        <div id="education" class="section education">
+            <h2>教育背景</h2>
+            <div class="education-grid">
+                <div>
+                    <p>中国矿业大学, 材料科学与工程, 本科, 2021年9月 - 至今</p>
+                    <p>GPA: 85.3, 排名: 14/152</p>
+                </div>
+                <div>
+                    <p>雅思：7（阅读满分9），GRE：321/340</p>
+                </div>
+            </div>
+        </div>
+        <div id="research" class="section research">
+            <h2>研究经历</h2>
+            <div class="experience-grid">
+                <div>
+                    <p>自校准抗干扰智能阵列煤矿危险气体传感器，主要是根据气体的特征响应值去识别不同的危险气体。自学了深度学习的知识，编程了一个初步的框架，提出的构想是利用深度学习识别图片的优越性，训练识别不同的气体特征值曲线。</p>
+                </div>
+                <div>
+                    <p>锂电池隔膜的研究，主要的目的是对锂电池隔膜的改性，利用自然矿物设计性能优越的电池隔膜。主要工作是查阅文献，设计可行的改性步骤。</p>
+                </div>
+                <div>
+                    <p>有限元分析，自学了ABAQUS的基本操作。对继电器的运动过程进行的动态分析（3D建模和分析过程的设置），最终目的是通过声学分析减少继电器运动过程中的机械噪音。</p>
+                </div>
+            </div>
+        </div>
+        <div id="honors" class="section honors">
+            <h2>荣誉奖项</h2>
+            <div class="honors-grid">
+                <div>
+                    <p>2021-2022年度中国矿业大学三等奖学金</p>
+                </div>
+                <div>
+                    <p>2022-2023年度中国矿业大学二等奖学金</p>
+                </div>
+                <div>
+                    <p>中国矿业大学概率论与数理统计竞赛二等奖</p>
+                </div>
+                <div>
+                    <p>中国矿业大学2023年大学生暑期社会实践活动优秀团队</p>
+                </div>
+                <div>
+                    <p>英国剑桥大学暑校优秀团队奖, 2023年8月</p>
+                </div>
+            </div>
+        </div>
+        <div id="practice" class="section practice">
+            <h2>实践经历</h2>
+            <div class="practice-grid">
+                <div>
+                    <p>英国剑桥大学暑校, 2023年8月</p>
+                </div>
+                <div>
+                    <p>大学生创新创业项目, 2023年 - 现在</p>
+                </div>
+            </div>
+        </div>
+        <div id="skills" class="section skills">
+            <h2>技能</h2>
+            <div class="skills-grid">
+                <div>
+                    <p>熟练掌握C++和Python编程语言</p>
+                </div>
+                <div>
+                    <p>熟悉材料科学与工程相关实验技术</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 李怡朋. 版权所有.</p>
+    </footer>
+</body>
+</html>
